@@ -14,8 +14,7 @@ struct ResultPlate: View {
                 .foregroundColor(.white)
                 .minimumScaleFactor(0.4)
                 .lineLimit(1)
-                .transition(.scale.combined(with: .opacity))
-                .animation(.easeInOut(duration: 0.2), value: text)
+            
         }
         .frame(height: Tokens.plateH)
         .padding(.horizontal, Tokens.platePadding)

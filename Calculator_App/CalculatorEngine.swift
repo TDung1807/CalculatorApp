@@ -3,7 +3,6 @@ import Foundation
 enum Op { case add, sub, mul, div }
 
 final class CalculatorEngine {
-    // UI đọc chuỗi này
     private(set) var display: String = ""
 
     // Trạng thái tính toán
