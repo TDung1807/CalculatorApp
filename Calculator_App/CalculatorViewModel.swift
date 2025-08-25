@@ -2,7 +2,7 @@ import SwiftUI
 
 
 final class CalculatorViewModel: ObservableObject {
-    @Published var display: String = "0"
+    @Published var display: String = ""
     @Published var history: [HistoryItem] = []
     @Published var showingHistory = false
 
@@ -17,7 +17,6 @@ final class CalculatorViewModel: ObservableObject {
         return f
     }()
 
-    var clearKey: CalcKey { display == "0" ? .ac : .clear }
 
     init() { display = engine.display }
 
@@ -37,7 +36,6 @@ final class CalculatorViewModel: ObservableObject {
                 history.insert(HistoryItem(expression: s.expr, result: s.res), at: 0)
             }
         case .ac: engine.clear(all: true)
-        case .clear: engine.clear(all: false)
         case .backspace: engine.backspace()
         }
         display = engine.display

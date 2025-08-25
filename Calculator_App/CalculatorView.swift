@@ -38,7 +38,7 @@ struct CalculatorView: View {
             VStack(spacing: Tokens.gap) {
                 LazyVGrid(columns: cols, spacing: Tokens.gap) {
                     // Hàng 1
-                    key(vm.clearKey, visual: vm.clearKey == .ac ? .destructive : .utility)
+                    key(.ac, visual: .destructive)
                     key(.plusMinus, visual: .utility)
                     key(.percent, visual: .utility)
                     key(.divide, visual: .op)

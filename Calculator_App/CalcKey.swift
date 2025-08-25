@@ -1,7 +1,7 @@
 import Foundation
 
 enum CalcKey: Hashable {
-    case ac, clear, plusMinus, percent
+    case ac, plusMinus, percent
     case divide, multiply, minus, plus
     case equals, dot
     case digit(Int)
@@ -21,10 +21,9 @@ extension CalcKey {
         case .percent: return "%"
         case .plusMinus: return "±"
         case .ac: return "AC"
-        case .clear: return "C"
         case .backspace: return "⌫"
         }
     }
     var isOp: Bool { [.plus,.minus,.multiply,.divide].contains(self) }
-    var isUtility: Bool { [.ac,.clear,.plusMinus,.percent].contains(self) }
+    var isUtility: Bool { [.ac, .plusMinus, .percent].contains(self) }
 }

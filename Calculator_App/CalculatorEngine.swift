@@ -4,7 +4,7 @@ enum Op { case add, sub, mul, div }
 
 final class CalculatorEngine {
     // UI đọc chuỗi này
-    private(set) var display: String = "0"
+    private(set) var display: String = ""
 
     // Trạng thái tính toán
     private var current: Decimal = 0            // số đang nhập
@@ -27,7 +27,7 @@ final class CalculatorEngine {
     // MARK: Input
     func inputDigit(_ d: Int) {
         if typing {
-            display = (display == "0") ? "\(d)" : display + "\(d)"
+            display = (display == "") ? "\(d)" : display + "\(d)"
         } else {
             display = "\(d)"; typing = true
         }
@@ -59,12 +59,12 @@ final class CalculatorEngine {
 
     func clear(all: Bool) {
         if all {
-            display = "0"; current = 0
+            display = ""; current = 0
             accumulator = nil; pending = nil
             lastRHS = nil; typing = false
             lastSnapshot = nil
         } else {
-            display = "0"; current = 0; typing = false
+            display = ""; current = 0; typing = false
         }
     }
     
@@ -73,7 +73,7 @@ final class CalculatorEngine {
         if display.count > 1 {
             display.removeLast()
         } else {
-            display = "0"
+            display = ""
         }
         current = Decimal(string: display) ?? 0
     
