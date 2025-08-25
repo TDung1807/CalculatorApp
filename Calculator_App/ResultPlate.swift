@@ -13,5 +13,7 @@ struct ResultPlate: View {
             .frame(height: Tokens.plateH)
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: Tokens.corner, style: .continuous))
+            .transition(.scale.combined(with: .opacity))
+            .animation(.easeInOut(duration: 0.2), value: text)
     }
 }

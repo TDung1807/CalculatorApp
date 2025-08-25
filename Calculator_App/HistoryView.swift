@@ -65,6 +65,6 @@ struct HistoryView: View {
                             Text("This will remove all history items.")
                         }
         }
-        .navigationBarHidden(true) // ẩn nav mặc định
-    }
+        .navigationBarHidden(true)
+            }
 }

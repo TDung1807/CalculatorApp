@@ -5,6 +5,7 @@ enum CalcKey: Hashable {
     case divide, multiply, minus, plus
     case equals, dot
     case digit(Int)
+    case backspace
 }
 
 extension CalcKey {
@@ -21,6 +22,7 @@ extension CalcKey {
         case .plusMinus: return "±"
         case .ac: return "AC"
         case .clear: return "C"
+        case .backspace: return "⌫"
         }
     }
     var isOp: Bool { [.plus,.minus,.multiply,.divide].contains(self) }

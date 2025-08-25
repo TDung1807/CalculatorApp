@@ -58,6 +58,7 @@ struct CalculatorView: View {
                     key(.digit(3), visual: .primary)
                     key(.plus, visual: .op)
                     // Hàng 5
+                    key(.backspace, visual: .utility)
                     KeyButton(.digit(0), visual: .primary) { vm.tap(.digit(0)) }
                         .gridCellColumns(2)
                     key(.dot, visual: .primary)

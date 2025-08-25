@@ -67,6 +67,17 @@ final class CalculatorEngine {
             display = "0"; current = 0; typing = false
         }
     }
+    
+    func backspace() {
+        guard !display.isEmpty else { return }
+        if display.count > 1 {
+            display.removeLast()
+        } else {
+            display = "0"
+        }
+        current = Decimal(string: display) ?? 0
+    
+    }
 
     func setOp(_ op: Op) {
         commitPendingIfNeeded()

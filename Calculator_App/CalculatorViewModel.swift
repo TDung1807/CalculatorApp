@@ -38,6 +38,7 @@ final class CalculatorViewModel: ObservableObject {
             }
         case .ac: engine.clear(all: true)
         case .clear: engine.clear(all: false)
+        case .backspace: engine.backspace()
         }
         display = engine.display
     }
